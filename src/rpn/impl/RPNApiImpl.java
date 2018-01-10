@@ -10,7 +10,9 @@ public class RPNApiImpl implements RPNApi {
   private final RPNBuilder rpnBuilder = new RPNBuilder();
 
   @Override
-  public Queue<String> createRPNValidArray(String text) {
-    return rpnBuilder.convertInfixToRPN(rpnAdapter.getRPNBuilderValidDataFormat(text));
+  public String[] createRPNValidArray(String text) {
+    Queue<String> strings = rpnBuilder.convertInfixToRPN(rpnAdapter.getRPNBuilderValidDataFormat(text));
+    return rpnAdapter.convertToStringArray(strings.toArray());
   }
+
 }

@@ -76,19 +76,19 @@ class RPNAdapter {
     return convertToStringArray(result.toArray());
   }
 
-  private boolean isStringNumeric(String s) {
-    for (String number : numbers) {
-      if (s.equals(number)) return true;
-    }
-    return false;
-  }
-
-  private String[] convertToStringArray(Object[] objects) {
+  String[] convertToStringArray(Object[] objects) {
     String[] result = new String[objects.length];
     for (int i = 0; i < objects.length; i++) {
       result[i] = (String) objects[i];
     }
     return result;
+  }
+
+  private boolean isStringNumeric(String s) {
+    for (String number : numbers) {
+      if (s.equals(number)) return true;
+    }
+    return false;
   }
 
   private String removeWhiteSpaces(String expression) {
