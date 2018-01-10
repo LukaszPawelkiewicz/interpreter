@@ -4,9 +4,9 @@ import data.RecordContainer;
 import data.RecordModel;
 import interpreter.number.NumberField;
 import interpreter.number.impl.*;
+import interpreter.operator.Operator;
 import interpreter.operator.compare.CompareOperator;
 import interpreter.operator.compare.impl.*;
-import interpreter.operator.logical.LogicalOperator;
 import interpreter.operator.logical.impl.And;
 import interpreter.operator.logical.impl.Or;
 
@@ -90,9 +90,7 @@ public class ExpressionInterpreter {
     Collection<RecordModel> result = recordContainer.getRecords();
     while (!stack.isEmpty()) {
       Expression popped = stack.pop();
-      if (popped instanceof LogicalOperator) {
-        result = ((LogicalOperator) popped).getMatchingValues(result);
-      }
+      result = ((Operator) popped).getMatchingValues(result);
     }
 
     return result;

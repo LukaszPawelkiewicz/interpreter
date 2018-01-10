@@ -1,12 +1,9 @@
 package interpreter.operator.compare;
 
-import data.RecordModel;
-import interpreter.Expression;
 import interpreter.number.NumberField;
+import interpreter.operator.Operator;
 
-import java.util.Collection;
-
-public abstract class CompareOperator extends Expression {
+public abstract class CompareOperator extends Operator {
 
   protected NumberField left;
   protected NumberField right;
@@ -15,7 +12,5 @@ public abstract class CompareOperator extends Expression {
     this.left = left;
     this.right = right;
   }
-
-  public abstract Collection<RecordModel> getMatchingValues(Collection<RecordModel> recordModels);
 
 }
