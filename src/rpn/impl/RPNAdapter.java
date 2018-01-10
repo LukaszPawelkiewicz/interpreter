@@ -1,9 +1,9 @@
-package rpn;
+package rpn.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RPNAdapter {
+class RPNAdapter {
 
   private static final String[] whiteSpaces = {" ", "\t"};
   private static final String[] allowedSingleSigns = {"a", "b", "c", "d", "e", "f", "g", "h", "=", "<", ">", "(", ")"};
@@ -12,7 +12,7 @@ public class RPNAdapter {
   private static final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
 
   @SuppressWarnings("StringConcatenationInLoop")
-  public String[] getRPNBuilderValidDataFormat(String text) {
+  String[] getRPNBuilderValidDataFormat(String text) {
     List<String> result = new ArrayList<>();
     text = removeWhiteSpaces(text);
     char[] signs = text.toCharArray();

@@ -2,7 +2,7 @@ package interpreter;
 
 import data.RecordContainer;
 import data.RecordModel;
-import rpn.RPNBuilder;
+import rpn.impl.RPNBuilder;
 
 import java.util.Collection;
 

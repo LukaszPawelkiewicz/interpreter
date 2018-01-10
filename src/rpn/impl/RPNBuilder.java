@@ -1,4 +1,4 @@
-package rpn;
+package rpn.impl;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ public class RPNBuilder {
    * Method based on:
    * http://www.learn4master.com/data-structures/stack/convert-infix-notation-to-reverse-polish-notation-java
    */
-  public Queue<String> convertInfixToRPN(String[] infixNotation) {
+  Queue<String> convertInfixToRPN(String[] infixNotation) {
     Map<String, Integer> precedence = new HashMap<>();
     precedence.put("=", 5);
     precedence.put("<", 5);

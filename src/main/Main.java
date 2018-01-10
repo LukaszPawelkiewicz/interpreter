@@ -1,8 +1,8 @@
 package main;
 
 import data.RecordContainer;
-import rpn.RPNAdapter;
-import rpn.RPNBuilder;
+import rpn.RPNApi;
+import rpn.impl.RPNApiImpl;
 
 import java.util.Scanner;
 
@@ -13,10 +13,9 @@ public class Main {
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);
     final RecordContainer recordContainer = new RecordContainer();
-    final RPNAdapter rpnAdapter = new RPNAdapter();
-    final RPNBuilder rpnBuilder = new RPNBuilder();
+    final RPNApi rpnApi = new RPNApiImpl();
 
-    System.out.println(rpnBuilder.convertInfixToRPN(rpnAdapter.getRPNBuilderValidDataFormat(scanner.nextLine())));
+    System.out.println(rpnApi.createRPNValidArray(scanner.nextLine()));
   }
 
 }
