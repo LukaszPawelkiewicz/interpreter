@@ -1,14 +1,13 @@
 package interpreter.operator.logical;
 
 import interpreter.operator.Operator;
-import interpreter.operator.compare.CompareOperator;
 
 public abstract class LogicalOperator extends Operator {
 
-  protected CompareOperator left;
-  protected CompareOperator right;
+  protected Operator left;
+  protected Operator right;
 
-  public LogicalOperator(CompareOperator left, CompareOperator right) {
+  public LogicalOperator(Operator left, Operator right) {
     this.left = left;
     this.right = right;
   }

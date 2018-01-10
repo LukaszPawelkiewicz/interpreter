@@ -1,14 +1,14 @@
 package interpreter.operator.logical.impl;
 
 import data.RecordModel;
-import interpreter.operator.compare.CompareOperator;
+import interpreter.operator.Operator;
 import interpreter.operator.logical.LogicalOperator;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class And extends LogicalOperator {
-  public And(CompareOperator left, CompareOperator right) {
+  public And(Operator left, Operator right) {
     super(left, right);
   }
 

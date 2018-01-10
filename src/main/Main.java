@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class Main {
 
-  //(a <= 132 and b >= 12) or (a != 42 and b > 1)
   //(a = 1 and b = 2) or (a = 2 and b = 1)
 
   public static void main(String[] args) {

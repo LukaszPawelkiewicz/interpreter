@@ -5,7 +5,6 @@ import data.RecordModel;
 import interpreter.number.NumberField;
 import interpreter.number.impl.*;
 import interpreter.operator.Operator;
-import interpreter.operator.compare.CompareOperator;
 import interpreter.operator.compare.impl.*;
 import interpreter.operator.logical.impl.And;
 import interpreter.operator.logical.impl.Or;
@@ -49,10 +48,10 @@ public class ExpressionInterpreter {
           break;
 
         case "or":
-          stack.push(new Or((CompareOperator) stack.pop(), (CompareOperator) stack.pop()));
+          stack.push(new Or((Operator) stack.pop(), (Operator) stack.pop()));
           break;
         case "and":
-          stack.push(new And((CompareOperator) stack.pop(), (CompareOperator) stack.pop()));
+          stack.push(new And((Operator) stack.pop(), (Operator) stack.pop()));
           break;
 
         case "a":
