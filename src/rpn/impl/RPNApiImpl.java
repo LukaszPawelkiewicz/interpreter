@@ -11,6 +11,10 @@ public class RPNApiImpl implements RPNApi {
 
   @Override
   public String[] createRPNValidArray(String text) {
+    if (text.contains("\\r")) {
+      int index = text.lastIndexOf("\\r");
+      text = text.substring(0, index);
+    }
     Queue<String> strings = rpnBuilder.convertInfixToRPN(rpnAdapter.getRPNBuilderValidDataFormat(text));
     return rpnAdapter.convertToStringArray(strings.toArray());
   }

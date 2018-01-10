@@ -15,6 +15,8 @@ public class Main {
   //example queries
   //(a = 1 and b = 2) or (a = 2 and b = 1)
   //(a>b or c<d) and h<g
+  //(a = 1 and b = 2) or (a = 2 and b = 1) and (a>b or c<d) and h<g
+  //(a = 1 and b = 2) or (a = 2 and b = 1) \rand (a>b or c<d) and h<g
 
   public static void main(String[] args) {
     final Scanner scanner = new Scanner(System.in);
