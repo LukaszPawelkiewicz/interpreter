@@ -25,6 +25,20 @@ public class RecordModel {
     this.h = h;
   }
 
+  @Override
+  public String toString() {
+    return "RecordModel{" +
+        "a=" + a +
+        ", b=" + b +
+        ", c=" + c +
+        ", d=" + d +
+        ", e=" + e +
+        ", f=" + f +
+        ", g=" + g +
+        ", h=" + h +
+        '}';
+  }
+
   public int getA() {
     return a;
   }

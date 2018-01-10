@@ -17,7 +17,7 @@ public class LessEqual extends CompareOperator {
   public Collection<RecordModel> getMatchingValues(Collection<RecordModel> recordModels) {
     Collection<RecordModel> result = new ArrayList<>();
     recordModels.forEach(model -> {
-      if (left.getValue(model) <= right.getValue(model)) result.add(model);
+      if (left.getValue(model) >= right.getValue(model)) result.add(model);
     });
     return result;
   }

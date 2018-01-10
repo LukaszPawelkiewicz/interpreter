@@ -1,11 +1,13 @@
 package main;
 
 import data.RecordContainer;
+import data.RecordModel;
 import interpreter.ExpressionInterpreter;
 import rpn.RPNApi;
 import rpn.impl.RPNApiImpl;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Scanner;
 
 public class Main {
@@ -22,7 +24,8 @@ public class Main {
     String[] rpnQueue = rpnApi.createRPNValidArray(scanner.nextLine());
     System.out.println(Arrays.toString(rpnQueue));
 
-    System.out.println(expressionInterpreter.interpret(rpnQueue));
+    Collection<RecordModel> recordModels = expressionInterpreter.interpret(rpnQueue);
+    recordModels.forEach(recordModel -> System.out.println(recordModel.toString()));
   }
 
 }
