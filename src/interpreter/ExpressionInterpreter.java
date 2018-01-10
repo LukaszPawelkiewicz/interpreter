@@ -2,7 +2,6 @@ package interpreter;
 
 import data.RecordContainer;
 import data.RecordModel;
-import rpn.impl.RPNBuilder;
 
 import java.util.Collection;
 
@@ -15,7 +14,6 @@ public class ExpressionInterpreter {
   }
 
   public Collection<RecordModel> interpret(String expression) {
-    RPNBuilder rpnBuilder = new RPNBuilder();
 
     return recordContainer.getRecords();
   }

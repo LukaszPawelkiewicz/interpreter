@@ -2,7 +2,7 @@ package rpn.impl;
 
 import java.util.*;
 
-public class RPNBuilder {
+class RPNBuilder {
 
   /*
    * Method based on:
