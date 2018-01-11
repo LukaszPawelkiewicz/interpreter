@@ -14,9 +14,6 @@ import java.util.Stack;
 
 public class ExpressionInterpreter {
 
-  public static final String[] operators = {"=", "<", ">", "<=", ">=", "!=", "or", "and"};
-  public static final String[] fields = {"a", "b", "c", "d", "e", "f", "g", "h"};
-
   private final RecordContainer recordContainer;
 
   public ExpressionInterpreter(RecordContainer recordContainer) {

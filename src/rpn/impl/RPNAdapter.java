@@ -1,15 +1,11 @@
 package rpn.impl;
 
+import common.Constants;
+
 import java.util.ArrayList;
 import java.util.List;
 
 class RPNAdapter {
-
-  private static final String[] whiteSpaces = {" ", "\t"};
-  private static final String[] allowedSingleSigns = {"a", "b", "c", "d", "e", "f", "g", "h", "=", "<", ">", "(", ")"};
-  private static final String[] allowedDoubleSings = {"<=", ">=", "!=", "or"};
-  private static final String[] allowedMultiSigns = {"and"};
-  private static final String[] numbers = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
 
   @SuppressWarnings("StringConcatenationInLoop")
   String[] getRPNBuilderValidDataFormat(String text) {
@@ -22,7 +18,7 @@ class RPNAdapter {
       String tmp = String.valueOf(signs[i]);
       if ((i + 2) < signs.length) {
         tmp = tmp + signs[i + 1] + signs[i + 2];
-        for (String allowedMultiSing : allowedMultiSigns) {
+        for (String allowedMultiSing : Constants.ALLOWED_MULTI_SIGNS) {
           if (tmp.equals(allowedMultiSing)) {
             result.add(tmp);
             i = i + 2;
@@ -35,7 +31,7 @@ class RPNAdapter {
       tmp = String.valueOf(signs[i]);
       if ((i + 1) < signs.length) {
         tmp = tmp + signs[i + 1];
-        for (String allowedDoubleSing : allowedDoubleSings) {
+        for (String allowedDoubleSing : Constants.ALLOWED_DOUBLE_SIGNS) {
           if (tmp.equals(allowedDoubleSing)) {
             result.add(tmp);
             i++;
@@ -46,7 +42,7 @@ class RPNAdapter {
       if (condition) continue;
 
       tmp = String.valueOf(signs[i]);
-      for (String allowedSingleSign : allowedSingleSigns) {
+      for (String allowedSingleSign : Constants.ALLOWED_SINGLE_SIGNS) {
         if (tmp.equals(allowedSingleSign)) {
           if (tmp.equals("a") && ((i + 2) < signs.length) && signs[i + 1] == 'n' && signs[i + 2] == 'd') {
             break;
@@ -85,14 +81,14 @@ class RPNAdapter {
   }
 
   private boolean isStringNumeric(String s) {
-    for (String number : numbers) {
+    for (String number : Constants.NUMBERS) {
       if (s.equals(number)) return true;
     }
     return false;
   }
 
   private String removeWhiteSpaces(String expression) {
-    for (String whiteSpace : whiteSpaces) {
+    for (String whiteSpace : Constants.WHITE_SPACES) {
       expression = expression.replaceAll(whiteSpace, "");
     }
     return expression;

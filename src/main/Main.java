@@ -1,5 +1,6 @@
 package main;
 
+import common.Constants;
 import data.RecordContainer;
 import data.RecordModel;
 import interpreter.ExpressionInterpreter;
@@ -16,6 +17,7 @@ public class Main {
   //example queries
   //(a = 1 and b = 2) or (a = 2 and b = 1)
   //(a>b or c<d) and h<g
+  //((a>b or c<d) and h<g) or(a = 1 and b = 2) or (a = 2 and b = 1)
   //(a = 1 and b = 2) or (a = 2 and b = 1) \rand (a>b or c<d) and h<g (end line sing in the middle)
 
   public static void main(String[] args) {
@@ -35,6 +37,8 @@ public class Main {
 
     treeDrawer.drawTreeOnConsole(copied);
 
+    System.out.println(Constants.CLICK_CONFIRM);
+    scanner.nextLine();
     Collection<RecordModel> recordModels = expressionInterpreter.interpret(rpnQueue);
     recordModels.forEach(recordModel -> System.out.println(recordModel.toString()));
   }
