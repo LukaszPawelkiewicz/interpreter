@@ -1,2 +1,2 @@
 # interpreter
-Project of interpreter design pattern, able to understande logic operators, find records matching criteria and draw tree
+Project of interpreter design pattern, able to understand logic operators, find records matching criteria and draw tree
